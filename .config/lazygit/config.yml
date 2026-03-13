@@ -1,4 +1,0 @@
-gui:
-  showIcons: true
-services:
-  gitea.kotel.app: gitea:gitea.kotel.app

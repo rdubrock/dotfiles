@@ -1,23 +1,6 @@
-.builds/*
-!.builds/.gitkeep
 .DS_Store
-.mac/Brewfile.lock.json
 .env
 .env.local
-secrets/.env.*
-.venv
-.vaultpass
-.config/lazygit/state.yml
-repomgr.env
-repomgr.db
-repomgr.log
-*.log
-
-.config/zed/prompts/
 
 # private skill templates (synced via mmdot age encryption)
 .ai/skills/design-doc/templates/design-doc.md
-
-# tmux plugins (managed by TPM)
-.config/tmux/plugins/
-/mmdot/vault.yml
