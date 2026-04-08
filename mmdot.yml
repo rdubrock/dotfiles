@@ -2,6 +2,7 @@ exec:
   shell: /bin/bash
   scripts:
     - { path: "./setup/brew.sh", tags: ["personal", "setup"] }
+    - { path: "./setup/config.sh", tags: ["personal", "setup"] }
     - { path: "./setup/ai.sh", tags: ["personal", "ai"] }
 
 age:
