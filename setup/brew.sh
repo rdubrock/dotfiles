@@ -29,6 +29,7 @@ brew install --cask \
   ghostty \
   google-chrome \
   google-cloud-sdk \
+  googleworkspace-cli \
   colonyops/tap/hive \
   obsidian \
   orbstack \
