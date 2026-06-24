@@ -1,6 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
+# On Apple Silicon, refuse to run under Rosetta — it would install the Intel
+# Homebrew into /usr/local instead of the native /opt/homebrew.
+if [ "$(uname -p)" = "arm" ] && [ "$(uname -m)" = "x86_64" ]; then
+  echo "Running under Rosetta on Apple Silicon. Re-run in a native arm64 shell." >&2
+  exit 1
+fi
+
 # Install Homebrew if not present
 if ! command -v brew &>/dev/null; then
   echo "Installing Homebrew..."
@@ -9,6 +16,7 @@ fi
 
 # Taps
 brew tap colonyops/tap
+brew tap grafana/grafana
 
 # Formulae
 brew install \
@@ -16,8 +24,10 @@ brew install \
   go \
   node \
   nvm \
+  tmux \
   typescript \
-  gh
+  gh \
+  grafana/grafana/gcx
 
 # Casks
 brew install --cask \
@@ -35,6 +45,7 @@ brew install --cask \
   orbstack \
   slack \
   things \
+  vivaldi \
   zed
 
 echo "Brew setup complete."
